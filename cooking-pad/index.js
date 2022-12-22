@@ -1,7 +1,7 @@
 //Initial References
 let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
-let url = "www.themealdb.com/api/json/v1/1/search.php?f=a";
+let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=Ayam";
 
 searchBtn.addEventListener("click", () => {
   let userInp = document.getElementById("user-inp").value;
