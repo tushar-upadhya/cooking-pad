@@ -1,198 +1,121 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-
 * {
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
 body {
-    background: #ece9e6;
-    background: -webkit-linear-gradient(to right, #d16f6f, #f5a85a);
-    background: linear-gradient(to right, #827777, #edd2b8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    min-height: 100vh;
+  background-color: #f4c531;
 }
-
+.container {
+  background-color: #ffffff;
+  font-size: 16px;
+  padding: 3em 2.8em;
+  width: 90vw;
+  max-width: 32em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 0.6em;
+}
+.search-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  gap: 1.2em;
+}
+.search-container input {
+  font-size: 1em;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #202030;
+}
+.search-container button {
+  font-size: 1em;
+  background-color: #f4c531;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.3em;
+}
 img {
-    max-width: 100%;
+  display: block;
+  width: 50%;
+  margin: 1.8em auto 0 auto;
 }
-
-.mobile-container {
-    background-color: rgba(209, 166, 166, 0.818);
-    box-shadow: 0 0 10px 2px #3333331a;
-    border-radius: 3px;
-    overflow: hidden;
-    width: 400px;
+.details {
+  background-color: #f4c531;
+  position: relative;
+  margin: -4.3em 0 0 0;
+  text-align: center;
+  padding: 0.6em 0;
 }
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
+.details h2 {
+  font-size: 1.2em;
+  font-weight: 600;
 }
-
-header input {
-    background-color: rgb(220, 200, 200);
-    border: none;
-    border-radius: 3px;
-    font-family: inherit;
-    padding: 0.5rem 1rem;
+.details h4 {
+  font-size: 1em;
+  font-weight: 400;
 }
-
-header button {
-    background-color: transparent;
-    border: none;
-    color: rgb(63, 58, 64);
-    font-size: 1.5rem;
-    margin-left: 10px;
+#show-recipe {
+  font-size: 1em;
+  position: relative;
+  left: 75%;
+  padding: 0.9em 0.6em;
+  background-color: #f4c531;
+  border: none;
+  top: 1.5em;
+  border-radius: 0.3em;
+  font-weight: 600;
 }
-
-.fav-container {
-    background-color: rgb(218, 198, 167);
-    padding: 0.25rem 1rem;
-    text-align: center;
+#recipe {
+  position: absolute;
+  background-color: #ffffff;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 0.6em;
+  display: none;
 }
-
-.fav-meals {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
+#recipe pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 2.5em 1.2em 1.2em 1.2em;
+  font-size: 0.92em;
+  color: #303040;
 }
-
-.fav-meals li {
-    cursor: pointer;
-    position: relative;
-    margin: 5px;
-    width: 75px;
+#hide-recipe {
+  font-size: 1em;
+  position: relative;
+  width: 1.8em;
+  height: 1.8em;
+  background-color: #f4c531;
+  border: none;
+  top: 1.2em;
+  left: 90%;
+  border-radius: 0.3em;
 }
-
-.fav-meals li .clear {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    position: absolute;
-    top: -0.5rem;
-    right: -0.5rem;
-    font-size: 1.2rem;
+ul {
+  font-size: 1em;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.8em 1.1em;
+  padding: 1.2em 0 0 1.2em;
+  color: #303040;
+  text-transform: capitalize;
 }
-
-.fav-meals li:hover .clear {
-    opacity: 1;
+h3 {
+  text-align: center;
+  margin-top: 1.8em;
+  color: #202030;
 }
-
-.fav-meals li img {
-    border: 2px solid #e0bb7c;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px #3333331a;
-    object-fit: cover;
-    height: 70px;
-    width: 70px;
-}
-
-.fav-meals li span {
-    display: inline-block;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 75px;
-}
-
-.meal {
-    border-radius: 3px;
-    box-shadow: 0 0 10px 2px #3333331a;
-    cursor: pointer;
-    margin: 1.5rem;
-    overflow: hidden;
-}
-
-.meal-header {
-    position: relative;
-}
-
-.meal-header .random {
-    position: absolute;
-    top: 1rem;
-    background-color: rgb(206, 78, 78);
-    padding: 0.25rem 1rem;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
-.meal-header img {
-    object-fit: cover;
-    height: 250px;
-    width: 100%;
-}
-
-.meal-body {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-}
-
-.meal-body h4 {
-    margin: 0;
-}
-
-.meal-body .fav-btn {
-    border: none;
-    background-color: transparent;
-    color: rgb(197, 188, 188);
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-
-.meal-body .fav-btn.active {
-    color: rgb(170, 39, 39);
-}
-
-.popup-container {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.popup-container.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.popup {
-    background-color: rgb(214, 180, 138);
-    border-radius: 5px;
-    padding: 0 2rem;
-    position: relative;
-    overflow: auto;
-    max-height: 100vh;
-    max-width: 600px;
-    width: 100%;
-}
-
-.popup .close-popup {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
-.meal-info h1 {
-    text-align: center;
+@media screen and (max-width: 500px) {
+  .container {
+    font-size: 14px;
+  }
 }
